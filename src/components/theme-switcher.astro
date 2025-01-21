@@ -21,7 +21,7 @@ import { Icon } from "astro-icon/components";
   </div>
 </button>
 
-<script>
+<script is:inline>
   import invariant from "tiny-invariant";
 
   const themes = ["light", "dark"];
@@ -57,7 +57,7 @@ import { Icon } from "astro-icon/components";
   updateIcon();
 </script>
 
-<style>
+<style is:inline>
   :global(.fixed-header) #theme-switcher {
     @apply ml-0 scale-100;
   }
