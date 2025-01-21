@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import culturalGirlImage from "~/assets/cultural-girl.png";
+import culturalGirlImage from "../../public/cultural-girl.png";
 import HeroImage from "~/components/hero-image.astro";
 
 const widths = [450, 800];
@@ -16,7 +16,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
   
   <div class="relative grid h-full place-items-center sm:grid-cols-2">
     <h2 class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end">
-      <img src="src/assets/main-logo.png" class="size-20 text-white md:size-32" alt="Main KAHP Logo">
+      <img src="/main-logo.png" class="size-20 text-white md:size-32" alt="Main KAHP Logo">
       <div class="text-center font-extrabold tracking-tighter text-6xl md:text-8xl text-white">
         KAHP
         <br /> Legado
