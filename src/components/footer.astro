@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+import HeroImage from "~/components/hero-image.astro";
+import type { FooterLink } from "~/types";
+
+const links: Array<FooterLink> = [
+  {
+    url: "#home",
+    description: "Astro's official website",
+    icon: "mdi:home",
+  },
+  {
+    url: "https://www.facebook.com/profile.php?id=61552360846530",
+    description: "Visit Facebook profile",
+    icon: "fa-brands:facebook",
+  },
+  {
+    url: "https://www.instagram.com/kahp_legado_africano/",
+    description: "Visit Instagram profile",
+    icon: "fa-brands:instagram",
+  }
+];
+---
+
+<footer class="relative flex h-64 items-center justify-center">
+  <div class="absolute inset-0 overflow-hidden opacity-40">
+    <HeroImage />
+  </div>
+  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class="flex size-16 items-center justify-center rounded-full border-2 border-current p-4"
+            target="__blank"
+            href={link.url}
+          >
+            <span class="sr-only">{link.description}</span>
+            <Icon class="size-full" name={link.icon} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>

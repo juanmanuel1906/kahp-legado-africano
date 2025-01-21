@@ -1,0 +1,25 @@
+---
+import { galleryImages } from "../data/gallery";
+import ContentSection from "./content-section.astro";
+---
+
+<ContentSection title="Eventos" id="eventos">
+    <div class="text-center my-16 px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max-w-7xl">
+        {galleryImages.map((image, index) => (
+        <div
+            class={`relative overflow-hidden rounded-lg ${
+            index % 7 === 0 && "md:col-span-2 md:row-span-2"
+            }`}
+        >
+            <img
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
+            />
+        </div>
+        ))}
+    </div>
+    </div>
+</>

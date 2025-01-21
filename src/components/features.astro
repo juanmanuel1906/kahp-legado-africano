@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Artes Musicales y Escénicas",
+    description:
+      "Únete a nosotros para explorar la música y la danza. Desde el canto hasta tocar instrumentos, nos encanta compartir nuestra pasión por el ritmo y el movimiento. ¡Ven y siente la energía!",
+    icon: "mdi:handshake",
+  },
+  {
+    title: "Estilo y Creatividad",
+    description:
+      "Nos encanta la moda y el diseño creativo. Creamos piezas únicas con moda circular, bisutería y pintura textil. Únete a nosotros para descubrir cómo la sostenibilidad puede ser elegante y divertida.",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Arte en Acción",
+    description:
+      "Expresamos nuestra creatividad a través del arte visual. Desde grafitis hasta body paint, transformamos nuestro entorno con color y personalidad. ¡Ven a ver cómo el arte cobra vida!",
+    icon: "mdi:directions-fork",
+  },
+  {
+    title: "Sabores de Tradición",
+    description:
+      "Celebramos la cultura a través de la comida y las bebidas ancestrales del Pacífico. Comparte con nosotros la pasión por los sabores auténticos que nos conectan con nuestras raíces.",
+    icon: "mdi:graph",
+  },
+  {
+    title: "Historias que Conectan",
+    description:
+      "Somos narradores y educadores. Con la comunicación social y la etnoeducación, compartimos historias que promueven el entendimiento cultural y fortalecen la comunidad. ¡Descubre el poder de las palabras!",
+    icon: "mdi:search-web",
+  },
+  {
+    title: "Verde y Sostenible",
+    description:
+      "Promovemos la conexión con la naturaleza a través del manejo de huertas y prácticas sostenibles. Aprendemos juntos a cuidar el planeta y a vivir de manera más consciente.",
+    icon: "mdi:account-group",
+  },
+];
+---
+
+<ContentSection title="Habilidades" id="features">
+  <Fragment slot="lead">
+    Descubre talentos únicos: <span class="text-primary">desde música y danza hasta moda</span>. Una celebración de
+    <span class="text-primary">creatividad, tradición e innovación</span>
+    en cada expresión artística.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="size-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} class="size-full" />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
